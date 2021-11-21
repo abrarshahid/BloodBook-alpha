@@ -1,0 +1,147 @@
+<!-- 
+Person:
+
+	Name
+	Type:Volunteer/Non-volunteer
+	Blood Group : A+
+	Rating: 5/5
+	Phone : *******
+	Address: **,**,**
+	If non-volunteer then fee : 50tk
+-->
+{% extends 'blood_main_app/base.html' %}
+
+{% load static %}
+{% block title %}Home  -- BloodBook{% endblock %}
+{% block icon %}
+<div class="icon">
+<img class="icon-nav" src="{% static '/BloodBook/svg/home.svg' %}" alt="" >
+<img class="icon-nav" src="{% static '/BloodBook/svg/bell.svg' %}" alt="" >
+<img  class="icon-nav" src="{% static '/BloodBook/svg/chat.svg' %}" alt="" >
+<img  class="icon-nav mobile" src="{% static '/BloodBook/svg/donationrequest.svg' %}" alt="" > 
+
+<div class="dropdown">
+ {% if request.user.img %}
+		   		 <img class="user-pic" src="/media/{{request.user.img }}" alt="" >
+		   		 {% else %}
+
+		   		 <img class="user-pic" src="/static/BloodBook/svg/user.jpg" alt="" >
+		   		 {% endif %}
+
+  <div class="dropdown-content" style="position: absolute;">
+ 				<p class="loginandsignupbtn" style="outline: none;border: none;">
+					<a href="/logout/" style="text-decoration: none;color: var(--main);">Logout</a>
+					<br>
+					<a href="/user-profile/{{request.user.username}}" style="text-decoration: none;color: var(--main);">Profile</a>
+					<br>
+					<a href="/edit-profile/"  style="text-decoration: none;color: var(--main);">Edit&nbsp;Profile</a></p>
+
+  </div>
+</div>
+</div>
+
+
+
+<div class="dropdown">
+ {% if request.user.img %}
+		   		 <img class="user-pic mobilenav" src="/media/{{request.user.img }}" alt="" >
+		   		 {% else %}
+
+		   		<img class="user-pic mobilenav" src="{% static '/BloodBook/svg/user.jpg' %}" alt="" >
+
+		   		 {% endif %}
+
+  <div class="dropdown-content" style="position: absolute;">
+ 				<p class="loginandsignupbtn" style="outline: none;border: none;">
+					<a href="/logout/" style="text-decoration: none;color: var(--main);">Logout</a>
+					<br>
+					<a href="/user-profile/{{request.user.username}}" style="text-decoration: none;color: var(--main);">Profile</a>
+					<br>
+					<a href="/edit-profile/"  style="text-decoration: none;color: var(--main);">Edit&nbsp;Profile</a></p>
+
+  </div>
+
+
+{% endblock %}
+
+{% block body %}
+<div style="margin:10.5%">
+	<table border="1" cellpadding="1" cellspacing="1" style="width: 100%;height: 50%;border-collapse: collapse;">
+<thead style="
+">
+<tr>
+<th scope="col"><p>If your blood type is:</p></th>
+<th scope="col"><p>You can give to:</p></th>
+<th scope="col"><p>You can receive from:</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>O Positive</p></td>
+<td><p>O+, A+, B+, AB+</p></td>
+<td>
+<p>O+, O-</p>
+</td>
+</tr>
+<tr>
+<td><p>A Positive</p></td>
+<td><p>A+, AB+</p></td>
+<td><p>A+, A-, O+, O-</p></td>
+</tr>
+<tr>
+<td><p>B Positive</p></td>
+<td><p>B+, AB+</p></td>
+<td><p>B+, B-, O+, O-</p></td>
+</tr>
+<tr>
+<td><p>AB Positive</p></td>
+<td><p>AB+ Only</p></td>
+<td><p>All Blood Types</p></td>
+</tr>
+<tr>
+<td><p>O Negative</p></td>
+<td><p>All Blood Types</p></td>
+<td><p>O-</p></td>
+</tr>
+<tr>
+<td><p>A Negative</p></td>
+<td><p>A-, A+, AB-, AB+</p></td>
+<td><p>A-, O-</p></td>
+</tr>
+<tr>
+<td><p>B Negative</p></td>
+<td><p>B-, B+, AB-, AB+</p></td>
+<td><p>B-, O-</p></td>
+</tr>
+<tr>
+<td><p>AB Negative</p></td>
+<td><p>AB-, AB+</p></td>
+<td><p>AB-, A-, B-, O-</p></td>
+</tr>
+</tbody>
+</table>
+</table>
+</div>
+
+
+{% endblock %}
+
+
+{% block footer %}
+
+ <div class="footer">
+<div class="footer-icon">
+<img class="icon-nav" style="margin-right: 8px;" src="{% static '/BloodBook/svg/home.svg' %}" alt="" >
+<img class="icon-nav" style="margin-right: 8px;" src="{% static '/BloodBook/svg/bell.svg' %}" alt="" >
+<img  class="icon-nav"style="margin-right: 8px;" src="{% static '/BloodBook/svg/chat.svg' %}" alt="" >
+
+<img class="icon-nav" style="margin-right: 8px;" src="{% static '/BloodBook/svg/report.svg' %}" alt="" >
+<img class="icon-nav" style="margin-right: 8px;" src="{% static '/BloodBook/svg/corona.svg' %}" alt="" >
+<img  class="icon-nav mobile" src="{% static '/BloodBook/svg/donationrequest.svg' %}" alt="" >
+
+<img class="icon-nav" style="margin-right: 8px;" src="{% static '/BloodBook/svg/donateorreceive.svg' %}" alt="" >
+
+</div>
+</div>
+
+{% endblock %}

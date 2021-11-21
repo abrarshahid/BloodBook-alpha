@@ -1,0 +1,40 @@
+
+<title>{% block title %}{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta charset="utf-8">
+{% block css %}{% endblock %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/BloodBook/css/main.css' %}">
+
+<nav>
+
+
+ 		<div class="main-text-nav" style="color:#FF2156;"><a href="/" style="text-decoration: none;color: var(--main);">BloodBook</a></div>
+ 		
+ 		
+ 		<form class="search" action="/search/" method="get">
+
+ 		<span >	
+ 		<img src="{% static '/BloodBook/svg/search.svg' %}" alt="" >
+ 		
+ 	<input class="search-text" type="text" name="search" placeholder=" Search"  /></span>
+ 
+ 	</form>
+
+
+
+
+{% block icon %}
+{% endblock %}
+
+
+{% block button %}{% endblock %}
+
+ 	</nav>
+
+
+
+ {% block body %}{% endblock %}
+
+
+{% block footer %}{% endblock %}
