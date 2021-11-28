@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'kvf%2tv2*2-694nzzos5gk$1@3cppr^x=2w4lk40x_sak7dcjs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,7 +83,12 @@ if DEBUG==True:
         }
     }
 
+import dj_database_url
 
+DATABASES = {
+    
+    'default': dj_database_url.config()
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
