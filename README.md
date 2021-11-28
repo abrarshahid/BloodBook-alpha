@@ -3,7 +3,7 @@ An online blood donation platform built to save millions of lives and can scale 
 <br><br>
 ### Live Preview Link : https://bloodbook-alpha.herokuapp.com/
 <br>
-Main Focus/Purpose: 
+### Main Focus/Purpose: 
 <br>
 -Easy connection between donor and receiver
 <br>
@@ -11,7 +11,7 @@ Main Focus/Purpose:
 <br>
 -Reducing the number  of deaths for blood
 <br><br>
-Features:
+### Features:
 <br>
 -Location Synchronize Donor and Receiver (Nearby donor & receiver)
 <br>
@@ -23,7 +23,7 @@ Features:
 <br>
 -Emergency Blood necessity feature which will send request to all donor in that particular area.
 <br><br>
-Tools:
+### Tools:
 <br>
 I planned to make the platform as a website and an android app. The tools I am using making this project are:
 <br>
